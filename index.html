@@ -1,112 +1,566 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Gangwar Cab – Reliable Cab Booking in Bareilly | Outstation Taxi</title>
-  <meta name="description" content="Gangwar Cab offers affordable, reliable taxi and cab services from Bareilly for outstation, round trips, local rentals & corporate needs.">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gangwar Cab - Best Bareilly Taxi Service & Cab Booking</title>
+    <meta name="description" content="Book reliable and affordable taxi service in Bareilly. 24/7 cab booking, one-way trips, round trips, airport transfers. Call 09997255049">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-  <header>
-    <div class="container nav-bar">
-      <img src="images/gangwar-logo.png" alt="Gangwar Cab Logo" height="55">
-      <nav>
-        <a href="#home">Home</a>
-        <a href="#services">Services</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-      </nav>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h2>Gangwar Cab</h2>
+                </div>
+                <nav class="nav" id="nav">
+                    <a href="#home">Home</a>
+                    <a href="#services">Services</a>
+                    <a href="#about">About</a>
+                    <a href="#contact">Contact</a>
+                    <a href="#booking" class="nav-cta">Booking</a>
+                </nav>
+                <div class="header-actions">
+                    <a href="tel:09997255049" class="phone-link">
+                        <i class="fas fa-phone"></i>
+                        09997255049
+                    </a>
+                    <button class="btn btn--primary book-now-btn" onclick="scrollToBooking()">Book Now</button>
+                </div>
+                <button class="mobile-menu-btn" id="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1>Best Bareilly Taxi Service & Cab Booking at Gangwar Cab</h1>
+                        <p class="hero-subtitle">Reliable & Affordable Cab Service in Bareilly</p>
+                        <div class="hero-features">
+                            <span><i class="fas fa-clock"></i> 24/7 Online Booking</span>
+                            <span><i class="fas fa-route"></i> One-Way & Round Trips</span>
+                            <span><i class="fas fa-plane"></i> Airport Transfers</span>
+                            <span><i class="fas fa-map-marked-alt"></i> Tour Packages</span>
+                        </div>
+                    </div>
+                    <div class="booking-form-container">
+                        <div class="card">
+                            <div class="card__body">
+                                <h3>Book Your Cab Now</h3>
+                                <form id="booking-form" class="booking-form">
+                                    <div class="form-group">
+                                        <label class="form-label">Pickup City</label>
+                                        <input type="text" class="form-control" name="pickup" id="pickup" value="Bareilly" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Destination City</label>
+                                        <input type="text" class="form-control" name="destination" id="destination" placeholder="Enter destination" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Trip Type</label>
+                                        <select class="form-control" name="tripType" required>
+                                            <option value="">Select Trip Type</option>
+                                            <option value="local">Local</option>
+                                            <option value="oneway">One Way</option>
+                                            <option value="roundtrip">Round Trip</option>
+                                            <option value="tour">Tour Package</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Taxi Type</label>
+                                        <select class="form-control" name="taxiType" required>
+                                            <option value="">Select Taxi Type</option>
+                                            <option value="hatchback">Hatchback (₹11/km)</option>
+                                            <option value="sedan">Sedan (₹13/km)</option>
+                                            <option value="suv">SUV (₹15/km)</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Pickup Date</label>
+                                        <input type="date" class="form-control" name="date" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Name</label>
+                                        <input type="text" class="form-control" name="name" placeholder="Enter your name" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Mobile Number</label>
+                                        <input type="tel" class="form-control" name="mobile" placeholder="Enter mobile number" required pattern="[0-9]{10}">
+                                    </div>
+                                    <button type="submit" class="btn btn--primary btn--full-width">
+                                        <i class="fas fa-car"></i> Book Now
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vehicle Fleet Section -->
+        <section id="fleet" class="fleet-section">
+            <div class="container">
+                <h2>Our Vehicle Fleet</h2>
+                <p>Choose from our well-maintained fleet of vehicles</p>
+                <div class="fleet-grid">
+                    <div class="fleet-card">
+                        <div class="fleet-icon">
+                            <i class="fas fa-car"></i>
+                        </div>
+                        <h3>Hatchback</h3>
+                        <p class="fleet-rate">₹11/km</p>
+                        <p class="fleet-description">Economy option</p>
+                        <p class="fleet-models">Wagon R, Indica</p>
+                    </div>
+                    <div class="fleet-card">
+                        <div class="fleet-icon">
+                            <i class="fas fa-car-side"></i>
+                        </div>
+                        <h3>Sedan</h3>
+                        <p class="fleet-rate">₹13/km</p>
+                        <p class="fleet-description">Standard comfort</p>
+                        <p class="fleet-models">Dzire, Etios, Tata Zest</p>
+                    </div>
+                    <div class="fleet-card">
+                        <div class="fleet-icon">
+                            <i class="fas fa-shuttle-van"></i>
+                        </div>
+                        <h3>SUV</h3>
+                        <p class="fleet-rate">₹15/km</p>
+                        <p class="fleet-description">Premium option</p>
+                        <p class="fleet-models">Innova</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Features Section -->
+        <section id="features" class="features-section">
+            <div class="container">
+                <h2>Why Choose Gangwar Cab</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3>24/7 Availability Always</h3>
+                        <p>We, Gangwar Cab are here for you anytime, anywhere.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-money-bill-wave"></i>
+                        </div>
+                        <h3>Affordable Pricing</h3>
+                        <p>Competitive rates with no hidden charges.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-car-alt"></i>
+                        </div>
+                        <h3>Well-Maintained Fleet</h3>
+                        <p>Clean and comfortable vehicles for every journey.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <h3>Professional Drivers</h3>
+                        <p>Experienced and courteous drivers ensuring your safety.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="services-section">
+            <div class="container">
+                <h2>Our Services</h2>
+                <p>Comprehensive taxi and cab services for all your transportation needs</p>
+                <div class="services-grid">
+                    <div class="service-card card">
+                        <div class="card__body">
+                            <div class="service-icon">
+                                <i class="fas fa-route"></i>
+                            </div>
+                            <h3>One-Way Taxi Services</h3>
+                            <p>Convenient point-to-point travel across cities with professional drivers.</p>
+                        </div>
+                    </div>
+                    <div class="service-card card">
+                        <div class="card__body">
+                            <div class="service-icon">
+                                <i class="fas fa-undo-alt"></i>
+                            </div>
+                            <h3>Round-Trip Taxi</h3>
+                            <p>Comfortable round-trip services with flexible timing and stopovers.</p>
+                        </div>
+                    </div>
+                    <div class="service-card card">
+                        <div class="card__body">
+                            <div class="service-icon">
+                                <i class="fas fa-map-marked-alt"></i>
+                            </div>
+                            <h3>Outstation Taxi</h3>
+                            <p>Long-distance travel to multiple cities with experienced drivers.</p>
+                        </div>
+                    </div>
+                    <div class="service-card card">
+                        <div class="card__body">
+                            <div class="service-icon">
+                                <i class="fas fa-building"></i>
+                            </div>
+                            <h3>Corporate Travel</h3>
+                            <p>Dedicated corporate transportation solutions for businesses.</p>
+                        </div>
+                    </div>
+                    <div class="service-card card">
+                        <div class="card__body">
+                            <div class="service-icon">
+                                <i class="fas fa-plane"></i>
+                            </div>
+                            <h3>Airport Transfers</h3>
+                            <p>Punctual and reliable airport pickup and drop-off services.</p>
+                        </div>
+                    </div>
+                    <div class="service-card card">
+                        <div class="card__body">
+                            <div class="service-icon">
+                                <i class="fas fa-suitcase"></i>
+                            </div>
+                            <h3>Tour Packages</h3>
+                            <p>Customized tour packages for memorable travel experiences.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h2>Your Trusted Cab Service in Bareilly at Gangwar Cab</h2>
+                        <p>At Gangwar Cab, we are committed to providing hassle-free, budget-friendly intercity travel solutions. Our mission is to make your journey safe, comfortable, and affordable while maintaining the highest standards of service.</p>
+                        <div class="about-points">
+                            <div class="about-point">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>Safe & Reliable</span>
+                            </div>
+                            <div class="about-point">
+                                <i class="fas fa-money-bill-wave"></i>
+                                <span>Affordable Rates</span>
+                            </div>
+                            <div class="about-point">
+                                <i class="fas fa-clock"></i>
+                                <span>Always Punctual</span>
+                            </div>
+                            <div class="about-point">
+                                <i class="fas fa-smile"></i>
+                                <span>Customer Satisfaction</span>
+                            </div>
+                        </div>
+                        <p><strong>Coverage:</strong> We provide services to major cities in North India including Delhi, Noida, Gurgaon, Nainital, Mussoorie, Haridwar, Rishikesh, and many more destinations.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="testimonials-section">
+            <div class="container">
+                <h2>What Our Customers Say</h2>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card card">
+                        <div class="card__body">
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p>"We use Gangwar Cab for our company staff transport. They're always on time, courteous, and maintain high standards."</p>
+                            <div class="testimonial-author">
+                                <strong>Vikram Chauhan</strong>
+                                <span>HR Executive</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card card">
+                        <div class="card__body">
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p>"We booked a tour package to Mussoorie and everything was well-planned. From pickup to sightseeing, it was a smooth and joyful ride."</p>
+                            <div class="testimonial-author">
+                                <strong>Sneha Gupta</strong>
+                                <span>Homemaker</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card card">
+                        <div class="card__body">
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p>"I often travel to Noida for meetings and Gangwar Cab is always my first choice. Their drivers are professional and the booking process is super easy."</p>
+                            <div class="testimonial-author">
+                                <strong>Ankit Mehra</strong>
+                                <span>IT Consultant</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card card">
+                        <div class="card__body">
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p>"I took their round-trip service to Nainital with my family. Smooth ride, no hassles, and the driver even suggested good food spots on the way."</p>
+                            <div class="testimonial-author">
+                                <strong>Priya Sharma</strong>
+                                <span>Teacher</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card card">
+                        <div class="card__body">
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p>"I booked a one-way cab from Bareilly to Delhi and the driver arrived right on time. The car was clean and comfortable, and the driver was very polite. Highly recommended!"</p>
+                            <div class="testimonial-author">
+                                <strong>Ramesh Verma</strong>
+                                <span>Sales Manager</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="faq-section">
+            <div class="container">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>How do I book a taxi with Gangwar Cab?</h3>
+                            <i class="fas fa-plus"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>You can book through our website form, call 09997255049, or visit our office. Our team is available 24/7 to assist you.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>What types of vehicles do you offer?</h3>
+                            <i class="fas fa-plus"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We offer Hatchbacks, Sedans, and SUVs with different seating capacities and comfort levels to suit your needs.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Are your drivers experienced and licensed?</h3>
+                            <i class="fas fa-plus"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, all our drivers are fully licensed, experienced, and undergo background checks. They are trained for safe and courteous service.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Do you provide airport transfer services?</h3>
+                            <i class="fas fa-plus"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, we provide 24/7 airport transfer services to and from all major airports with punctual pickup and drop services.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Are your services available 24/7?</h3>
+                            <i class="fas fa-plus"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, Gangwar Cab operates 24/7, 365 days a year. You can book our services anytime for your convenience.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Gangwar Cab</h3>
+                    <p>Your trusted taxi service in Bareilly for reliable and affordable transportation.</p>
+                    <div class="footer-contact">
+                        <p><i class="fas fa-phone"></i> <a href="tel:09997255049">09997255049</a></p>
+                        <p><i class="fas fa-envelope"></i> Gangwarcabs@gmail.com</p>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Popular Routes</h3>
+                    <div class="routes-grid">
+                        <a href="#" class="route-link" data-route="delhi" data-distance="278" data-time="5h 25m" data-price="₹3,490">Bareilly to Delhi</a>
+                        <a href="#" class="route-link" data-route="nainital" data-distance="144" data-time="4h 02m" data-price="₹3,024">Bareilly to Nainital</a>
+                        <a href="#" class="route-link" data-route="haridwar" data-distance="253" data-time="5h 33m" data-price="₹3,499">Bareilly to Haridwar</a>
+                        <a href="#" class="route-link" data-route="rishikesh" data-distance="297" data-time="5h 47m" data-price="₹4,199">Bareilly to Rishikesh</a>
+                        <a href="#" class="route-link" data-route="mussoorie" data-distance="348" data-time="7h 43m" data-price="₹6,391">Bareilly to Mussoorie</a>
+                        <a href="#" class="route-link" data-route="noida" data-distance="259" data-time="5h 01m" data-price="₹2,930">Bareilly to Noida</a>
+                        <a href="#" class="route-link" data-route="ghaziabad" data-distance="238" data-time="4h 33m" data-price="₹2,644">Bareilly to Ghaziabad</a>
+                        <a href="#" class="route-link" data-route="gurgaon" data-distance="295" data-time="5h 21m" data-price="₹2,405">Bareilly to Gurgaon</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Gangwar Cab. All rights reserved. | Reliable taxi service in Bareilly</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Success Modal -->
+    <div id="success-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="success-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h3>Booking Successful!</h3>
+            <p>Thank you for choosing Gangwar Cab. We will contact you shortly to confirm your booking.</p>
+            <button class="btn btn--primary" onclick="closeModal()">OK</button>
+        </div>
     </div>
-  </header>
-  <section class="hero" id="home">
-    <div class="container hero-content">
-      <h1>Gangwar Cab</h1>
-      <p>Reliable & Trusted Cab Service – Bareilly's #1 Choice for Outstation & Local Travel</p>
-      <a href="#booking" class="cta-btn">Book Your Cab</a>
+
+    <!-- Route Page Container (Hidden by default) -->
+    <div id="route-page" class="route-page" style="display: none;">
+        <div class="container">
+            <div class="route-header">
+                <button class="btn btn--outline back-btn" onclick="goBack()">
+                    <i class="fas fa-arrow-left"></i> Back to Home
+                </button>
+                <h1 id="route-title"></h1>
+            </div>
+            <div class="route-content">
+                <div class="route-info">
+                    <div class="route-details">
+                        <div class="route-detail-item">
+                            <i class="fas fa-route"></i>
+                            <span>Distance: <strong id="route-distance"></strong></span>
+                        </div>
+                        <div class="route-detail-item">
+                            <i class="fas fa-clock"></i>
+                            <span>Time: <strong id="route-time"></strong></span>
+                        </div>
+                        <div class="route-detail-item">
+                            <i class="fas fa-money-bill-wave"></i>
+                            <span>Starting from: <strong id="route-price"></strong></span>
+                        </div>
+                    </div>
+                    <div class="route-map">
+                        <div class="map-placeholder">
+                            <i class="fas fa-map-marked-alt"></i>
+                            <p>Route Map</p>
+                            <div class="map-markers">
+                                <div class="marker pickup">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Bareilly</span>
+                                </div>
+                                <div class="route-line"></div>
+                                <div class="marker destination">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span id="destination-marker"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="route-booking">
+                    <div class="card">
+                        <div class="card__body">
+                            <h3>Book This Route</h3>
+                            <form id="route-booking-form" class="booking-form">
+                                <div class="form-group">
+                                    <label class="form-label">Pickup City</label>
+                                    <input type="text" class="form-control" name="pickup" value="Bareilly" readonly>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Destination City</label>
+                                    <input type="text" class="form-control" name="destination" id="route-destination" readonly>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Trip Type</label>
+                                    <select class="form-control" name="tripType" required>
+                                        <option value="oneway" selected>One Way</option>
+                                        <option value="roundtrip">Round Trip</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Taxi Type</label>
+                                    <select class="form-control" name="taxiType" required>
+                                        <option value="">Select Taxi Type</option>
+                                        <option value="hatchback">Hatchback (₹11/km)</option>
+                                        <option value="sedan">Sedan (₹13/km)</option>
+                                        <option value="suv">SUV (₹15/km)</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Pickup Date</label>
+                                    <input type="date" class="form-control" name="date" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Name</label>
+                                    <input type="text" class="form-control" name="name" placeholder="Enter your name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Mobile Number</label>
+                                    <input type="tel" class="form-control" name="mobile" placeholder="Enter mobile number" required pattern="[0-9]{10}">
+                                </div>
+                                <button type="submit" class="btn btn--primary btn--full-width">
+                                    <i class="fas fa-car"></i> Book Now
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </section>
-  <section class="booking-form-section" id="booking">
-    <div class="container">
-      <h2>Quick Booking</h2>
-      <form action="https://formspree.io/f/your-form-id" method="POST" class="booking-form">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <input type="text" name="phone" placeholder="Phone Number" required>
-        <input type="text" name="pickup" placeholder="Pickup Location" required>
-        <input type="text" name="drop" placeholder="Drop Location" required>
-        <input type="date" name="date" required>
-        <input type="time" name="time" required>
-        <select name="cab_type" required>
-          <option value="">Select Cab Type</option>
-          <option value="Sedan">Sedan</option>
-          <option value="SUV">SUV</option>
-          <option value="Tempo Traveller">Tempo Traveller</option>
-        </select>
-        <textarea name="message" placeholder="Any special requests?"></textarea>
-        <button type="submit">Book Now</button>
-      </form>
-    </div>
-  </section>
-  <section class="services" id="services">
-    <div class="container">
-      <h2>Our Services</h2>
-      <ul class="service-list">
-        <li><strong>Outstation Cab Booking</strong><br>Lowest price outstation trips from Bareilly.</li>
-        <li><strong>Round Trip Rides</strong><br>Get cabs for full journey, transparent rates.</li>
-        <li><strong>Tour Packages</strong><br>Customized tours for all India destinations.</li>
-        <li><strong>Corporate Taxi</strong><br>Professional & punctual cab service for businesses.</li>
-        <li><strong>Local Rental</strong><br>Hourly or day rental in Bareilly with AC cars.</li>
-      </ul>
-    </div>
-  </section>
-  <section class="pricing" id="pricing">
-    <div class="container">
-      <h2>Pricing</h2>
-      <table>
-        <tr><th>Service</th><th>Rate</th></tr>
-        <tr><td>Outstation One Way</td><td>₹11/km (Sedan)</td></tr>
-        <tr><td>Round Trip</td><td>₹10/km (Sedan)</td></tr>
-        <tr><td>Local Rental</td><td>₹1,800/8 hr (Sedan)</td></tr>
-        <tr><td>Tempo Traveller</td><td>₹25/km</td></tr>
-      </table>
-      <p class="note">*Contact us for a custom quote. Toll, parking, and driver allowance extra where applicable.</p>
-    </div>
-  </section>
-  <section class="about" id="about">
-    <div class="container">
-      <h2>About Us</h2>
-      <p>
-        Gangwar Cab is dedicated to providing safe, clean, and affordable taxi services from Bareilly.
-        Our experienced drivers and transparent billing make us Bareilly's top choice for travel. We serve families, businesses, and tourists with 24x7 support and a wide range of vehicles.
-      </p>
-    </div>
-  </section>
-  <section class="testimonials">
-    <div class="container">
-      <h2>Testimonials</h2>
-      <blockquote>Clean cars and prompt service. Recommended! – <em>Amit S.</em></blockquote>
-      <blockquote>Lowest rates for outstation. Great driver! – <em>Priya B.</em></blockquote>
-    </div>
-  </section>
-  <section class="contact" id="contact">
-    <div class="container">
-      <h2>Contact Us</h2>
-      <p>
-        Phone: +91-XXXXXXXXXX<br>
-        WhatsApp: +91-XXXXXXXXXX<br>
-        Email: gangwarcab@gmail.com
-      </p>
-      <p>
-        Address: Opp. Railway Station, Bareilly, UP, India
-      </p>
-    </div>
-  </section>
-  <footer>
-    <div class="container">
-      &copy; 2025 Gangwar Cab. All rights reserved.
-    </div>
-  </footer>
+
+    <script src="app.js"></script>
 </body>
 </html>
