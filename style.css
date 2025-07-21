@@ -1,0 +1,158 @@
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  background: #f7f7f7;
+  color: #222;
+}
+.container {
+  width: 95%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 16px 0;
+}
+header {
+  background: #001e2b;
+  color: #fff;
+  padding: 0;
+}
+.nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 28px;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+header nav a:hover {
+  color: #00B386;
+}
+.hero {
+  background: #006a7a;
+  color: #fff;
+  text-align: center;
+  padding: 60px 0 40px 0;
+}
+.hero h1 {
+  font-size: 3rem;
+  margin: 0 0 16px 0;
+  letter-spacing: 1px;
+}
+.hero p {
+  font-size: 1.3rem;
+  margin-bottom: 24px;
+}
+.cta-btn {
+  background: #00B386;
+  color: #fff;
+  padding: 12px 32px;
+  border: none;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: background 0.2s;
+}
+.cta-btn:hover {
+  background: #00765A;
+}
+.booking-form-section {
+  background: #fff;
+  border-bottom: 1px solid #e2e2e2;
+}
+.booking-form-section h2 {
+  margin-top: 0;
+}
+.booking-form {
+  max-width: 520px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  flex-direction: column;
+}
+.booking-form input, .booking-form select, .booking-form textarea {
+  width: 100%;
+  padding: 11px;
+  border: 1px solid #c5dae1;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+.booking-form textarea { height: 58px; }
+.booking-form button {
+  background: #00B386;
+  border: none;
+  color: #fff;
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  margin-top: 6px;
+}
+.booking-form button:hover {
+  background: #00765A;
+}
+.services, .pricing, .about, .testimonials, .contact {
+  background: #fff;
+  margin: 20px 0;
+  border-radius: 10px;
+  box-shadow: 0 1px 4px #e8e8e8;
+  padding: 20px 0;
+}
+h2 {
+  color: #006a7a;
+}
+.service-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+.service-list li {
+  padding: 10px 25px;
+  background: #eaf6fa;
+  border-radius: 7px;
+  flex: 1 1 220px;
+  min-width: 180px;
+}
+.pricing table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.pricing th, .pricing td {
+  padding: 12px 8px;
+  border-bottom: 1px solid #e0e0e0;
+  text-align: left;
+}
+.pricing .note {
+  font-size: 0.93rem;
+  color: #666;
+  margin-top: 7px;
+}
+.testimonials blockquote {
+  border-left: 4px solid #00B386;
+  font-style: italic;
+  background: #f5fffa;
+  margin: 10px 0;
+  padding: 10px 15px;
+  border-radius: 6px;
+}
+footer {
+  background: #001e2b;
+  color: #ccc;
+  text-align: center;
+  padding: 14px 0;
+  font-size: 1rem;
+  letter-spacing: 0.06rem;
+}
+@media (max-width: 768px) {
+  .nav-bar { flex-direction: column; align-items: flex-start; padding: 10px 0; }
+  header nav a { margin: 0 12px 0 0; }
+  .hero h1 { font-size: 2rem; }
+  .service-list { flex-direction: column; }
+}
