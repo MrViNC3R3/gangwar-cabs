@@ -104,95 +104,77 @@ function initBookingForm() {
     const bookingForm = document.getElementById('booking-form');
     
     if (bookingForm) {
-        // Ensure form inputs work properly
+        // Visual focus styling (optional)
         const inputs = bookingForm.querySelectorAll('input, select');
         inputs.forEach(input => {
             input.addEventListener('focus', function() {
                 this.style.outline = '2px solid var(--color-primary)';
             });
-            
             input.addEventListener('blur', function() {
                 this.style.outline = '';
             });
         });
         
         bookingForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            
-            console.log('Booking form submitted');
-            
-            // Get form data
+            e.preventDefault(); // Stop default submit initially
+
+            // Gather form data for validation
             const formData = new FormData(bookingForm);
             const bookingData = {};
-            
-            // Convert FormData to object
             for (let [key, value] of formData.entries()) {
                 bookingData[key] = value;
             }
             
-            console.log('Form data:', bookingData);
-            
-            // Validate form
+            // Validate
             if (validateBookingForm(bookingData)) {
-                // Show loading state
+                // Optional: show loading state
                 const submitBtn = bookingForm.querySelector('button[type="submit"]');
                 showLoadingState(submitBtn);
-                
-                // Simulate booking process
+
                 setTimeout(() => {
+                    // Remove loading state immediately before submit
                     hideLoadingState(submitBtn);
-                    showSuccessModal();
-                    bookingForm.reset();
-                    initDatePicker(); // Reset date picker
-                    console.log('Booking submitted successfully:', bookingData);
-                    
-                    // Track booking completion
-                    trackBookingComplete(bookingData);
-                }, 1500);
+                    bookingForm.submit(); // Native POST to Formspree
+                }, 600);
             }
+            // If invalid, showValidationErrors will handle it
         });
     }
 }
 
+
 // Route Booking Form Functionality - Fixed
 function initRouteBookingForm() {
     const routeBookingForm = document.getElementById('route-booking-form');
-    
     if (routeBookingForm) {
         routeBookingForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            
-            // Get form data
+            e.preventDefault(); // Always intercept first for validation
+
+            // Gather form data
             const formData = new FormData(routeBookingForm);
             const bookingData = {};
-            
-            // Convert FormData to object
             for (let [key, value] of formData.entries()) {
                 bookingData[key] = value;
             }
-            
-            // Validate form
+
+            // Your custom validation
             if (validateBookingForm(bookingData)) {
-                // Show loading state
+                // Optional: show loading indicator before submit (UI feedback)
                 const submitBtn = routeBookingForm.querySelector('button[type="submit"]');
                 showLoadingState(submitBtn);
-                
-                // Simulate booking process
+
+                // Remove loading feedback before submit (optional, or after submit if you like)
                 setTimeout(() => {
                     hideLoadingState(submitBtn);
-                    showSuccessModal();
-                    routeBookingForm.reset();
-                    console.log('Route booking submitted:', bookingData);
-                    
-                    // Track booking completion
-                    trackBookingComplete(bookingData);
-                }, 1500);
+                    // Actually submit the form to Formspree via standard HTTP POST
+                    routeBookingForm.submit();
+                }, 600); // fast, but lets button UI show briefly
             }
+            // If invalid, validation errors are shown by validateBookingForm
         });
     }
 }
+
 
 // Route Links Functionality - Fixed
 function initRouteLinks() {
